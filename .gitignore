@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Data output
+data/
+
+# Documentation files (if sensitive)
+初賽Baseline程式碼說明
+
+#temp
+temp/
+
+#PPT
+*.pptx
