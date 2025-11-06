@@ -1,11 +1,11 @@
-# 🏆 Yushan AI Cup — 金融法金文件檢索問答系統（RAG）
+# Yushan AI Cup — 金融法金文件檢索問答系統（RAG）
 
 **角色**：資料科學家 / 系統實作  
 **定位**：以檔案處理 + 向量檢索 + LLM 生成為核心的金融/保險/FAQ 分類問答系統，符合玉山 AI Cup 題目輸出格式。
 
 ---
 
-## 🎯 目標
+## 目標
 - 將競賽提供的 **參考資料（PDF / JSON）** 轉為可檢索的知識庫  
 - 建立 **FAISS 向量索引**（依類別：`faq`、`finance`、`insurance`）  
 - 以 **檢索增強生成（RAG）** 流程回答問題，並輸出 **官方格式的 JSON**  
@@ -13,7 +13,7 @@
 
 ---
 
-## 🏗️ 系統架構
+## 系統架構
 1. **資料擷取與正規化**
    - **PDF**：`PDFProcessor` 結合 `pdfplumber` / `PyMuPDF` 取得文字；影像頁透過 `PIL + pytesseract` OCR
    - **OCR 後處理**：使用 `LangChain` + `ChatOpenAI(gpt-4o-mini)` 的 **OCR 清理 Prompt**，自動修整錯字與版面
@@ -39,7 +39,7 @@
 
 ---
 
-## 🧩 主要模組
+## 主要模組
 - `controllers/InitializationController.py`：一鍵初始化（資料處理→摘要→索引）
 - `controllers/QuestionController.py`：問題處理、檢索與答案組裝
 - `models/PDFProcessor.py`：PDF 解析、影像 OCR、OCR 後處理（LLM 清理）
@@ -51,7 +51,7 @@
 
 ---
 
-## 🛠️ 執行方式（範例）
+## 執行方式（範例）
 ```bash
 # 產出符合競賽格式的答案 JSON
 python app.py \
